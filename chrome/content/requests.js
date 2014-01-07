@@ -459,10 +459,13 @@ RequestEntry.prototype =
  */
 function getWeakReference(/**nsISupports*/ node) /**nsIWeakReference*/
 {
+/*
   if (node instanceof Ci.nsISupportsWeakReference)
     return Cu.getWeakReference(node);
   else
     return null;
+  */
+  return node;
 }
 
 /**
@@ -470,9 +473,12 @@ function getWeakReference(/**nsISupports*/ node) /**nsIWeakReference*/
  */
 function getReferencee(/**nsIWeakReference*/ weakRef) /**nsISupports*/
 {
+/*
   try {
     return weakRef.QueryReferent(Ci.nsISupports);
   } catch (e) {
     return null;
   }
+  */
+  return weakRef;
 }
